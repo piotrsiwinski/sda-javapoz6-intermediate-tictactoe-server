@@ -50,8 +50,7 @@ public class Server {
     Thread clientThread = new Thread(() -> {
       try {
         Worker worker = new Worker(socket);
-        // TODO: Implement request listener
-//        worker.setRequestListener();
+        worker.setRequestListener(new MessageRequestListener());
         worker.startCommunication();
       } catch (IOException | ClassNotFoundException e) {
         logger.info("Error on client thread" + e.getMessage());

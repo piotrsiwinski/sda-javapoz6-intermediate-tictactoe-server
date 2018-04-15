@@ -1,3 +1,5 @@
+import pl.sda.poznan.Message;
+
 /**
  * Interjest, ktorego zadaniem bedzie wysyalanie odpowiedniej wiadomosci na podstawie przyslanej
  * wiadomosci

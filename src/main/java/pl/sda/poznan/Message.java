@@ -1,3 +1,5 @@
+package pl.sda.poznan;
+
 import java.io.Serializable;
 
 public class Message implements Serializable {

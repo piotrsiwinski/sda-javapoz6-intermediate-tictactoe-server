@@ -11,15 +11,21 @@ public class Transmission {
 
   public Transmission(Socket socket) throws IOException {
     this.socket = socket;
-    this.inputStream = new ObjectInputStream(socket.getInputStream());
-    this.outputStream = new ObjectOutputStream(socket.getOutputStream());
+//    this.inputStream = new ObjectInputStream(socket.getInputStream());
+//    this.outputStream = new ObjectOutputStream(socket.getOutputStream());
   }
 
   public void sendObject(Object obj) throws IOException {
+    if(outputStream == null){
+      this.outputStream = new ObjectOutputStream(this.socket.getOutputStream());
+    }
     outputStream.writeObject(obj);
   }
 
   public Object readObject() throws IOException, ClassNotFoundException {
+    if(inputStream == null){
+      this.inputStream = new ObjectInputStream(socket.getInputStream());
+    }
     return inputStream.readObject();
   }
 }

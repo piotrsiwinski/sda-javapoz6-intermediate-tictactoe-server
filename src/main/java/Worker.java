@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.Socket;
+import pl.sda.poznan.Message;
 
 public class Worker {
 
